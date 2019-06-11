@@ -16,18 +16,18 @@ try {
     //Server settings
     $mail->SMTPDebug = 2;                                       // Enable verbose debug output
     $mail->isSMTP();                                            // Set mailer to use SMTP
-    $mail->Host       = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+    $mail->Host       = 'smtp-mail.outlook.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'clicknblink7@gmail.com';                     // SMTP username
+    $mail->Username   = 'revati.chaudhari@capgemini.com';                     // SMTP username
     $mail->Password   = 'reva@7654321';                               // SMTP password
     $mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
     $mail->Port       = 587;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('clicknblink7@gmail.com', 'revati');
-    $mail->addAddress('clicknblink7@gmail.com');     // Add a recipient
-    $mail->addAddress('ellen@example.com');               // Name is optional
-    $mail->addReplyTo('info@example.com', 'Information');
+    $mail->setFrom('revati.chaudhari@capgemini.com', 'revati');            
+    $mail->addAddress('neha.a.dingankar@capgemini.com');     // Add a recipient
+    //$mail->addAddress('ellen@example.com');               // Name is optional
+    //$mail->addReplyTo('info@example.com', 'Information');
     //$mail->addCC('cc@example.com');
     //$mail->addBCC('bcc@example.com');
 
@@ -45,5 +45,6 @@ try {
     echo 'Message has been sent';
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    //nhsckvhjd
 }
 ?>
