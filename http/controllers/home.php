@@ -1,11 +1,28 @@
 <?php
-
+require "http/models/User.php";
 class home extends Controller{
     function __construct() {
         //@session_start();
 	parent::__construct();
     }
     function first(){
+		
+		if ($_POST){
+			$UserObj = new UserModel();
+			$response = $UserObj->checkUser($_POST['username'],sha1($_POST['password']));
+			if (count($response) > 0){
+				if ($response[0]['role'] == 'EMPLOYEE'){
+						//set sessions
+					$_SESSION['emp_uid'] = $response[0]['id'];
+					$_SESSION['emp_username'] = $response[0]['username'];
+					$this->view->message = "Success <script>window.reload();</script>";
+					}else{
+						$this->view->message = "UnAuthorized Access";
+					}
+				}else{
+					$this->view->message = "Please check the username and password";
+				}
+		}
     //print_r($_SESSION);
         if (@$_SESSION['uid']){
         		
