@@ -13,6 +13,7 @@ $App = new Route(); //dont remove this line.
 
 
 $App->get("/","home->first"); //default call
+$App->post("/","home->first");
 $App->get("/admin","admin->first");
 $App->post("/admin","admin->first");
 $App->get("/admin/logout","admin->logout");

@@ -7,6 +7,7 @@ class user extends Controller{
     public function add(){
         if ($_POST){
             $UserObj = new UserModel();
+            $_POST['password'] = sha1($_POST['password']);
             if ($UserObj->add($_POST)){
                 $this->view->message = "Successfully Added.";
             }else{

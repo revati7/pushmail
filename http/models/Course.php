@@ -64,6 +64,13 @@ class CourseModel extends DB {
     	//@session_start();
         parent::__construct($this);
     }
+    public function getCount(){
+        $state = "SELECT COUNT(`id`) AS `c` FROM `".$this->TableName."` WHERE `etms` = 0";
+        $query = $this->prepare($state);
+        $query->execute();
+        $d = $query->fetchAll(PDO::FETCH_ASSOC);
+        return ($d[0]['c']?$d[0]['c']:0);
+    }
     public function add($data){
         $state = "INSERT INTO `courses`( 
                         `course_name`, 

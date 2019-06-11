@@ -5,14 +5,17 @@ class course extends Controller{
         parent::__construct();
     }
     public function add(){
+        $CourseObj = new CourseModel();
         if ($_POST){
-            $CourseObj = new CourseModel();
+            
             if ($CourseObj->add($_POST)){
+                     
                 $this->view->message = "Successfully Created";
             }else{
                 $this->view->message = "Problem Occur";
             }
         }
+        $this->view->userCount = number_format($UserObj->getCount());
         $this->view->title = "Add Course | "._COMPANY_NAME_;
         $this->view->render("admin/course/add");
     }

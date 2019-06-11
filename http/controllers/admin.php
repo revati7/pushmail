@@ -4,9 +4,10 @@ class admin extends Controller{
     function __construct(){
         parent::__construct();
     }
-    function first(){
+    function first(){ 
+        $UserObj = new UserModel();
         if ($_POST){
-            $UserObj = new UserModel();
+           
             $response = $UserObj->checkUser($_POST['username'],sha1($_POST['password']));
             if (count($response) > 0){
                 if ($response[0]['role'] == 'ADMIN'){
@@ -22,8 +23,9 @@ class admin extends Controller{
             }
         }
         if (@$_SESSION['admin_uid']){
-        		
-			$this->view->title = "Dashboard | "._COMPANY_NAME_;
+            $this->view->userCount = number_format($UserObj->getCount());
+            $this->view->title = "Dashboard | "._COMPANY_NAME_;
+            
 			$this->view->render("admin/index/dashboard");
 			
 		}else{

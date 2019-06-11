@@ -26,7 +26,7 @@
                         </div>
                         <div class="form-group">
                             <label>Role</label>
-                            <input type="string" class="form-control" name="rolr"/>
+                            <input type="string" class="form-control" name="role"/>
                         </div>
                         
                         <input type="submit" class="btn btn-primary" value="Add User" />

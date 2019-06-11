@@ -25,7 +25,7 @@ try {
 
     //Recipients
     $mail->setFrom('revati.chaudhari@capgemini.com', 'revati');            
-    $mail->addAddress('neha.a.dingankar@capgemini.com');     // Add a recipient
+    $mail->addAddress('revati.chaudhari@capgemini.com');     // Add a recipient
     //$mail->addAddress('ellen@example.com');               // Name is optional
     //$mail->addReplyTo('info@example.com', 'Information');
     //$mail->addCC('cc@example.com');

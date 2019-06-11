@@ -14,7 +14,7 @@
 			        <div class='card'>
 			        <div class="card-body">
 					<h4>Users</h4>
-			        <h1>10,000</h1>
+			        <h1><?php echo $this->userCount;?></h1>
 					</div>
 			        <div class="card-footer">
 			            <a href='<?php echo _ADMIN_PATH_;?>/user/view' class='btn btn-primary'>View</a>
@@ -26,7 +26,7 @@
 			        <div class='card'>
 						<div class="card-body">
 							<h4>Courses</h4>
-							<h1>10,000</h1>
+							<h1><?php echo $this->courseCount;?></h1>
 						</div>
 						<div class="card-footer">
 							<a href='<?php echo _ADMIN_PATH_;?>/course/view' class='btn btn-primary'>View</a>
