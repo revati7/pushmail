@@ -6,7 +6,50 @@
  */
 
 class CourseSelectedModel extends DB {
-
+    public $TableName = "course_selected";
+    public $Schema = array(
+        'csid'            => array(
+            "dataType"=>"int", 
+            "dataSize"=>11, 
+            "not_null"=>true,
+            "primary_key" => true,
+            'auto_increment' => true
+        ),
+        'uid'            => array(
+            "dataType"=>"int", 
+            "dataSize"=>11, 
+            "not_null"=>true
+        ),
+        'cid'            => array(
+            "dataType"=>"int", 
+            "dataSize"=>11, 
+            "not_null"=>true
+        ),
+        "status"     => array(
+            "dataType"=>"int", 
+            "dataSize"=>11, 
+            "not_null"=>true,
+            "default" => 0
+        ),
+        "timestamp" => array(
+            "dataType"=>"int", 
+            "dataSize"=>11, 
+            "not_null"=>true,
+            "default" => 0
+        ),
+        "mod_timestamp" => array(
+            "dataType"=>"int", 
+            "dataSize"=>11, 
+            "not_null"=>true,
+            "default" => 0
+        ),
+        "etms"          => array(
+            "dataType"=>"int", 
+            "dataSize"=>11, 
+            "not_null"=>true,
+            "default" => 0
+        )
+    );
     function __construct() {
     	//@session_start();
         parent::__construct(_DNS_, _USER_, _PASS_);

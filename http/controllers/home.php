@@ -1,6 +1,5 @@
 <?php
 require "http/models/User.php";
-
 class home extends Controller{
     function __construct() {
         //@session_start();

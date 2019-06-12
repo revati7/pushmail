@@ -14,12 +14,13 @@ $mail = new PHPMailer(true);
 
 try {
     //Server settings
+    set_time_limit(0);
     $mail->SMTPDebug = 2;                                       // Enable verbose debug output
     $mail->isSMTP();                                            // Set mailer to use SMTP
     $mail->Host       = 'smtp-mail.outlook.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
     $mail->Username   = 'revati.chaudhari@capgemini.com';                     // SMTP username
-    $mail->Password   = 'reva@7654321';                               // SMTP password
+    $mail->Password   = 'reva$7654321$';                               // SMTP password
     $mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
     $mail->Port       = 587;                                    // TCP port to connect to
 

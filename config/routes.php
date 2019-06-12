@@ -32,7 +32,8 @@ $App->crud("/admin/user","user");
 /*
 * You can add other routes below.
 */
-
+$App->get("/course/view","course->view_applycourses");
+$App->get("/course/viewstatus","course->view_coursestatus");
 
 
 /*
