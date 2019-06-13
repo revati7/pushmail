@@ -8,7 +8,7 @@
 class CourseSelectedModel extends DB {
     public $TableName = "course_selected";
     public $Schema = array(
-        'csid'            => array(
+        'id'            => array(
             "dataType"=>"int", 
             "dataSize"=>11, 
             "not_null"=>true,
@@ -52,7 +52,7 @@ class CourseSelectedModel extends DB {
     );
     function __construct() {
     	//@session_start();
-        parent::__construct(_DNS_, _USER_, _PASS_);
+        parent::__construct($this);
     }
     public function add($data){
         $state = "INSERT INTO `course_selected`(

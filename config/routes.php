@@ -17,7 +17,7 @@ $App->post("/","home->first");
 $App->get("/admin","admin->first");
 $App->post("/admin","admin->first");
 $App->get("/admin/logout","admin->logout");
-
+$App->get('/course/apply',"course->apply");
 // $App->get("/admin/course/add","admin->create_course");
 // $App->post("/admin/course/add","admin->create_course");
 // $App->get("/admin/course/edit/{}","admin->create_course");
@@ -29,6 +29,8 @@ $App->get("/admin/logout","admin->logout");
 $App->crud("/admin/course","course");
 //$App->crud("/admin/courses","course");
 $App->crud("/admin/user","user");
+
+
 /*
 * You can add other routes below.
 */

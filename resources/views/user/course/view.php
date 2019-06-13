@@ -37,7 +37,7 @@
                                 <td><?php echo date("d-M-Y",$d['start_date']);?></td>
                                 <td><?php echo date("d-M-Y",$d['end_date']);?></td>
                                 <!-- <td><?php echo date("d-M-Y",$d['mod_timestamp']);?></td> -->
-                                <td><a href='<?php echo _PATH_;?>/mail.php' class='btn btn-primary'>Apply</a></td>
+                                <td><a href='<?php echo _PATH_;?>course/apply?cid=<?php echo $d['id'];?>' class='btn btn-primary'>Apply</a></td>
                             </tr>
                             </thead>
                         <?php
