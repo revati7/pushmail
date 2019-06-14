@@ -8,7 +8,7 @@ require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
 require 'vendor/phpmailer/phpmailer/src/SMTP.php';
 require 'vendor/phpmailer/phpmailer/src/POP3.php';
 require 'vendor/phpmailer/phpmailer/src/OAuth.php';
-
+require "http/models/User.php";
 require "http/models/Course.php";
 require "http/models/CourseSelected.php";
 class course extends Controller{
@@ -49,8 +49,8 @@ class course extends Controller{
         $this->view->render("user/course/view");
     }
     public function view_coursestatus(){
-        $CourseObj = new CourseModel();
-        $this->view->data = $CourseObj->getAll();
+        $CourseSelectedObj = new CourseSelectedModel();
+        $this->view->data = $CourseSelectedObj->getAppliedCourse($_SESSION['uid']);
         $this->view->title = "View Courses | "._COMPANY_NAME_;
         $this->view->render("user/course/viewstatus");
     }
@@ -58,7 +58,7 @@ class course extends Controller{
         $CourseSelectedObj = new CourseSelectedModel();
         $UserObj = new UserModel();
         if ($_GET['cid']){
-            
+
             $CourseSelectedObj->add(array(
                 "cid" => $_GET['cid'],
                 "uid" => $_SESSION['uid'],

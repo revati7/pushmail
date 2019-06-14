@@ -1,6 +1,6 @@
 <?php
 ob_start();
-error_reporting(0);
+error_reporting(E_ALL);
 require "tools/Tools.php";
 require "libs/DB.php";
 require "http/models/account.php";

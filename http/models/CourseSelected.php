@@ -48,12 +48,22 @@ class CourseSelectedModel extends DB {
             "dataSize"=>11, 
             "not_null"=>true,
             "default" => 0
-        )
-    );
+        ));
     function __construct() {
     	//@session_start();
         parent::__construct($this);
     }
+    public function getAppliedCourse($uid){
+        $state = "SELECT * FROM `course_selected`,`courses` 
+                    WHERE 
+                        `course_selected`.`cid` = `courses`.`id` AND 
+                        `course_selected`.`uid` = '".$uid."' AND 
+                        `course_selected`.`etms` = 0";
+        $query = $this->prepare($state);
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
     public function add($data){
         $state = "INSERT INTO `course_selected`(
                             `uid`, 
